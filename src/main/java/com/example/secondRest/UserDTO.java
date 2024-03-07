@@ -1,15 +1,25 @@
 package com.example.secondRest;
 
 public class UserDTO {
+
+
     private String name;
+
     private String email;
+
     private String gender;
+
     private int age;
-    private String phoneNumber;
+
+    private String phone_number;
+
     private String address;
+
     private String password;
-    private String userName;
-    private String profileImage;
+
+    private String user_name;
+
+    private String profile_image_url;
 
 
     public String getName() {
@@ -44,12 +54,12 @@ public class UserDTO {
         this.age = age;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone_number() {
+        return phone_number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public String getAddress() {
@@ -68,19 +78,20 @@ public class UserDTO {
         this.password = password;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
-    public String getProfileImage() {
-        return profileImage;
+    public String getProfile_image_url() {
+        return profile_image_url;
     }
 
-    public void setProfileImage(String profileImage) {
-        this.profileImage = profileImage;
+    public void setProfile_image_url(String profile_image_url) {
+        this.profile_image_url = profile_image_url;
     }
+
 }

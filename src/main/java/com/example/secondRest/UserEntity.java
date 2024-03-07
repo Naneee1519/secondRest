@@ -8,16 +8,26 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id;
+    private int id;
+
     private String name;
+
     private String email;
+
     private String gender;
+
     private int age;
+
     private String phone_number;
+
     private String address;
+
     private String password;
+
     private String user_name;
+
     private String profile_image_url;
+
 
     public int getId() {
         return id;

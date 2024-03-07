@@ -3,19 +3,19 @@ package com.example.secondRest;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="product")
+@Table(name = "Product")
 public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private int id;
-
     private String name;
 
-    private int cost;
+    private Long cost;
 
     private int discount;
+
+    private int id;
 
     private String product_Image_url;
 
@@ -29,11 +29,11 @@ public class ProductEntity {
         this.name = name;
     }
 
-    public int getCost() {
+    public Long getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(Long cost) {
         this.cost = cost;
     }
 
@@ -45,14 +45,12 @@ public class ProductEntity {
         this.discount = discount;
     }
 
-
-
-    public int getCategory_id() {
-        return category_id;
+    public int getId() {
+        return id;
     }
 
-    public void setCategory_id(int category_id) {
-        this.category_id = category_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getProduct_Image_url() {
@@ -61,13 +59,5 @@ public class ProductEntity {
 
     public void setProduct_Image_url(String product_Image_url) {
         this.product_Image_url = product_Image_url;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
