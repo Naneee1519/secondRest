@@ -19,6 +19,7 @@ public class HeroEntity {
     private int Hits;
 
     public int getSNO() {
+
         return SNO;
     }
 

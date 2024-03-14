@@ -9,6 +9,7 @@ public interface CategoryRepo extends JpaRepository<CategoryEntity,Long> {
     @Override
     <S extends CategoryEntity> S save(S entity);
 
-    @Override
     List<CategoryEntity> findAll();
+
+    void deleteById(Long aLong);
 }

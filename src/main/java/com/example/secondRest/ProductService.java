@@ -2,6 +2,7 @@ package com.example.secondRest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ProductService {
 
@@ -24,26 +25,39 @@ public class ProductService {
 //            throw e;
 //    }
 
-    public List<ProductEntity> convertProductDTOs(List<ProductEntity> productDTOs){
+    public List<ProductEntity> convertProductDTOs(List<ProductDTO> productDTOs) {
         List<ProductEntity> productEntities = new ArrayList<>();
 
-        for (ProductEntity productDTO : productDTOs){
+        for (ProductDTO productDTO : productDTOs) {
             ProductEntity productEntity = new ProductEntity();
             productEntity.setName(productDTO.getName());
             productEntity.setCost(productDTO.getCost());
             productEntity.setDiscount(productDTO.getDiscount());
-            productEntity.setProduct_Image_url(productDTO.getProduct_Image_url());
+            productEntity.setProductImageUrl(productDTO.getProductImageUrl());
             productEntity.setCategory_id(productDTO.getCategory_id());
-
             productEntities.add(productEntity);
         }
         return productEntities;
     }
 
 
-    public List<ProductEntity> createProducts(List<ProductEntity> productDTOs) {
-        List<ProductEntity> productEntities = convertProductDTOs(productDTOs);
-
+    public List<ProductEntity> saveProducts(List<ProductEntity> productEntities) {
         return productRepo.saveAll(productEntities);
     }
+
+
+    public void deleteProductById (Long id){
+
+        productRepo.deleteById(id);
+    }
+
+    public Optional <ProductEntity> getProductById(Long productId){
+
+        return productRepo.findById(productId);
+    }
+
+//    public List<ProductEntity> getProductsByCategoryId(Long category_id){
+//        return productRepo.findByCategoryId(category_id);
+//    }
+
 }

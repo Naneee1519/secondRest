@@ -18,12 +18,14 @@ public class CategoryService {
 
                     return categoryRepo.save(categoryEntity);
 
-
                 }catch( Exception e){
                     throw e;
                 }
 
             }
 
+            public void deleteCategoryById(Long category_id){
+                categoryRepo.deleteById(category_id);
+            }
 
 }

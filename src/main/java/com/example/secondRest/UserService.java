@@ -11,6 +11,7 @@ public class UserService {
     public UserEntity convertUserDTO(UserDTO userDTO){
         try {
             UserEntity userEntity = new UserEntity();
+            userEntity.setId(userDTO.getId());
             userEntity.setName(userDTO.getName());
             userEntity.setAddress(userDTO.getAddress());
             userEntity.setPhone_number(userDTO.getPhone_number());
